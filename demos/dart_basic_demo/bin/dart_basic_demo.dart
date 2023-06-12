@@ -7,6 +7,8 @@ void main(List<String> arguments) {
 
   var calculated = 2 / myVar;
   print(calculated);
+
+  rockPaperScissors('paper', 'rock');
 }
 
 void rockPaperScissors(String choice1, String choice2) {
