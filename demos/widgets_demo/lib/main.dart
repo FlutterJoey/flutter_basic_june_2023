@@ -224,7 +224,30 @@ class MyStatefulState extends State<MyStatefulWidget> {
     var name = inheritedWidget?.state.name ?? 'No name';
 
     return FilledButton(
-      onPressed: pressButton,
+      onPressed: () {
+        pressButton();
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return Scaffold(
+                body: Center(
+                  child: Column(
+                    children: [
+                      const Text('Counter has increased'),
+                      FilledButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text('close'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        );
+      },
       child: Text('$count $name'),
     );
   }
