@@ -96,9 +96,13 @@ class EventList extends StatelessWidget {
                 if (navigator.canPop()) {
                   navigator.pop();
                 } else {
-                  navigator.push(MaterialPageRoute(
-                      builder: (context) =>
-                          const Scaffold(body: EventPanel())));
+                  navigator.push(
+                    MaterialPageRoute(
+                      builder: (context) => const Scaffold(
+                        body: EventPanel(),
+                      ),
+                    ),
+                  );
                 }
               },
             ),
