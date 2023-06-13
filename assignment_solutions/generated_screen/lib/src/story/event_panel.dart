@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:generated_screen/src/story/story_event_card.dart';
 
 class EventPanel extends StatelessWidget {
   const EventPanel({
@@ -82,10 +83,25 @@ class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      clipBehavior: Clip.none,
       children: [
         for (var event in events)
-          ListTile(
-            title: Text(event),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: StoryEventCard(
+              name: event,
+              icon: Icons.electric_bolt_rounded,
+              onPressed: () {
+                var navigator = Navigator.of(context);
+                if (navigator.canPop()) {
+                  navigator.pop();
+                } else {
+                  navigator.push(MaterialPageRoute(
+                      builder: (context) =>
+                          const Scaffold(body: EventPanel())));
+                }
+              },
+            ),
           ),
       ],
     );

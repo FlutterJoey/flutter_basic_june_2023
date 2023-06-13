@@ -91,8 +91,9 @@ class StoryMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+        return Container(
+      margin: const EdgeInsets.all(8.0),
+      color: Colors.red.shade900,
       alignment: Alignment.center,
       child: const Text('Map'),
     );
