@@ -85,12 +85,10 @@ class _LoginPageState extends State<LoginPage> {
                       form.save();
 
                       //Login (email, password)
-                      print(email);
-                      print(password);
                     }
                   },
                   child: const Text('Submit'),
-                )
+                ),
               ],
             ),
           ),
